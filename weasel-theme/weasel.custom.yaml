@@ -1,0 +1,112 @@
+# ===========================================================================
+# 微信输入法风格小狼毫主题 / WechatIME theme for Weasel (Rime on Windows)
+# 四套配色 / Four schemes:
+#   wechat_default_light 浅色（默认）
+#   wechat_default_dark 深色
+#   wechat_blue_light   浅色
+#   wechat_blue_dark    深色
+# 切换主题: 改 style/color_scheme（浅色）与 style/color_scheme_dark（深色）
+#   后重新部署；深色自动切换需 Windows 10 1809 及以上。
+# ===========================================================================
+patch:
+  # ---- 启用配色 / Select schemes --------------------------------------------
+  # 浅色模式：wechat_default_light（默认绿）或 wechat_blue_light（蓝）
+  style/color_scheme: wechat_default_light
+  # 深色模式（系统深色时自动切换）：wechat_default_dark 或 wechat_blue_dark
+  style/color_scheme_dark: wechat_default_dark
+
+  # ---- 布局 / Layout ---------------------------------------------------------
+  style/horizontal: true                  # 横排候选 / horizontal candidate list
+  style/inline_preedit: true              # 编码嵌入应用，候选窗只显示候选
+  style/label_format: "%s"                # 候选序号只显示数字，不带点和空格 / number only
+  style/font_face: Microsoft YaHei        # 微软雅黑（Windows 上最接近苹方的常用选择）
+  style/label_font_face: Microsoft YaHei
+  style/comment_font_face: Microsoft YaHei
+  style/font_point: 12                    # 候选字号 / candidate font size
+  style/label_font_point: 10              # 编号字号 / label font size
+  style/comment_font_point: 10            # 注释字号 / comment font size
+  style/layout/corner_radius: 10          # 候选窗圆角 / panel corner radius
+  style/layout/hilited_corner_radius: 8   # 高亮项圆角 / highlight corner radius
+  style/layout/border_width: 1            # 1px 描边 / thin border stroke
+  style/layout/margin_x: 10               # 左右留白（药丸到窗缘 4px）
+  style/layout/margin_y: 9                # 上下留白（药丸到窗缘上下 4px，与左右一致）
+  style/layout/spacing: 4                 # 编码行与候选行间距 / spacing
+  style/layout/candidate_spacing: 18      # 候选横向间距（横排）
+  style/layout/hilite_spacing: 4          # 序号与候选词间距 / gap between label & candidate
+  style/layout/hilite_padding_x: 6        # 高亮“药丸”横向内边距
+  style/layout/hilite_padding_y: 5        # 高亮“药丸”纵向内边距
+  style/layout/shadow_radius: 3           # 阴影扩散半径 / shadow blur radius
+  style/layout/shadow_offset_x: 0         # 阴影不左右偏移 / no horizontal offset
+  style/layout/shadow_offset_y: 0         # 阴影不偏移 / centered, no offset
+
+  # ---- 浅色绿色（默认）/ light green -------------
+  preset_color_schemes/wechat_default_light:
+    name: 微信风格·默认浅色／WeChat Style Default
+    author: Eancen
+    shadow_color: 0x0A000000                 # 浅色阴影更淡（~4% 黑）/ fainter shadow on light
+    back_color: 0xFFFFFFFF                   # 纯白背景 / pure white background
+    border_color: 0xFFE3E3E3                   # 窗口描边 #E3E3E3 / panel outline
+    text_color: 0xFF888888                     # 预编辑拼音 / preedit
+    hilited_text_color: 0xFF333333
+    candidate_text_color: 0xFF333333           # 候选文字 / candidate text
+    candidate_back_color: 0xFFFFFFFF
+    label_color: 0xFF999999                    # 编号 / label
+    comment_text_color: 0xFF999999             # 注释 / comment
+    hilited_candidate_back_color: 0xFF74B103   # 选中底色 #03B174 / highlighted pill
+    hilited_candidate_text_color: 0xFFFFFFFF # 选中白字 / white text on pill
+    hilited_candidate_label_color: 0xFFFFFFFF
+    hilited_comment_text_color: 0xCCFFFFFF
+
+  # ---- 深色绿色 / dark green -----------------------
+  preset_color_schemes/wechat_default_dark:
+    name: 微信风格·默认深色／WeChat Style Default Dark
+    author: Eancen
+    shadow_color: 0x0A000000               # 极淡阴影（~4% 黑）/ very subtle shadow
+    back_color: 0xFF2C2C2C                   # 深灰背景 #2C2C2C / dark grey background
+    border_color: 0xFF121212                 # 描边 #121212 / outline
+    text_color: 0xFFAAAAAA
+    hilited_text_color: 0xFFEAEAEA
+    candidate_text_color: 0xFFEAEAEA           # 浅灰白候选文字 / light grey text
+    candidate_back_color: 0xFF2C2C2C
+    label_color: 0xFF999999                    # 编号 / label
+    comment_text_color: 0xFF999999             # 注释 / comment
+    hilited_candidate_back_color: 0xFF71AC19   # 选中底色 #19AC71 / highlighted pill
+    hilited_candidate_text_color: 0xFFFFFFFF  # 选中白字 / white text on pill
+    hilited_candidate_label_color: 0xFFFFFFFF
+    hilited_comment_text_color: 0xCCFFFFFF
+
+  # ---- 浅色蓝色 / light blue --------------------
+  preset_color_schemes/wechat_blue_light:
+    name: 微信风格·蓝浅色／WeChat Style Blue
+    author: Eancen
+    shadow_color: 0x0A000000
+    back_color: 0xFFFFFFFF
+    border_color: 0xFFE3E3E3
+    text_color: 0xFF888888
+    hilited_text_color: 0xFF333333
+    candidate_text_color: 0xFF333333
+    candidate_back_color: 0xFFFFFFFF
+    label_color: 0xFF999999
+    comment_text_color: 0xFF999999
+    hilited_candidate_back_color: 0xFFD47800   # 选中底色 #0078D4 / highlighted pill
+    hilited_candidate_text_color: 0xFFFFFFFF
+    hilited_candidate_label_color: 0xFFFFFFFF
+    hilited_comment_text_color: 0xCCFFFFFF
+
+  # ---- 深色蓝色 / dark blue -----------------------
+  preset_color_schemes/wechat_blue_dark:
+    name: 微信风格·蓝深色／WeChat Style Dark Blue
+    author: Eancen
+    shadow_color: 0x0A000000
+    back_color: 0xFF2C2C2C
+    border_color: 0xFF121212
+    text_color: 0xFFAAAAAA
+    hilited_text_color: 0xFFEAEAEA
+    candidate_text_color: 0xFFEAEAEA
+    candidate_back_color: 0xFF2C2C2C
+    label_color: 0xFF999999
+    comment_text_color: 0xFF999999
+    hilited_candidate_back_color: 0xFFD47800   # 选中底色 #0078D4 / highlighted pill
+    hilited_candidate_text_color: 0xFFFFFFFF
+    hilited_candidate_label_color: 0xFFFFFFFF
+    hilited_comment_text_color: 0xCCFFFFFF
